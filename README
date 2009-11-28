@@ -1,0 +1,12 @@
+
+This is the source code release of Erlang Robot Version 1.0
+
+1) Install Stand-alone Erlang
+	http://www.sics.se/~joe/sae.html
+
+2) Run Make as root
+
+3) add the current directory to PATH variable
+
+4)Then ./robot
+
