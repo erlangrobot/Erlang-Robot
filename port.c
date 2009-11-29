@@ -11,7 +11,6 @@
 #define f 0x11
 #define r 0x09
 #define l 0x12
-
 unsigned char read_ir(){
 	int i;
 	iopl(3);
@@ -19,9 +18,9 @@ unsigned char read_ir(){
 	if( f_left &&  f_right ){
 		if(!right)
 			return 'a';
-		else if(!left)
+		else if(!left )
 			return 'b';
-		if( ! back  )
+		if( !back  )
 			return 'c';
 		else
 			return 'd';
@@ -74,11 +73,12 @@ char **argv;
     while ((len = read_cmd(buf)) > 0) {
 	    if(buf[0] == '1') {
 		    move_forward(buf[1]);
+		    buf[0] = 'z';
+		    write_cmd(buf,1);
 	    }
 	    if(buf[0] == '2') {
 		    	buf[0] = read_ir();
 		    	write_cmd(buf,1);
-		        usleep(2550);
 	    }
 
     }
